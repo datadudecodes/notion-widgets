@@ -23,12 +23,13 @@ body {
 .buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .wrapper {
   position: relative;
   display: inline-block;
-  margin: 35px auto;
+  margin: 1rem 1rem  auto;
 }
 
 
