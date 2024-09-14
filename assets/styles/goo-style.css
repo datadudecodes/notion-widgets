@@ -1,7 +1,12 @@
 body {
-  background: #191919;
+  background: url("../images/black-bg.png") repeat;
   color: white;
   text-align: center;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  background-color:#191919;
 }
 
 a {
@@ -14,8 +19,9 @@ h1, h2, h3, h4 {
   margin-top: 2rem;
 }
 
-h1 {
-  font-size: 3em;
+h2 {
+  font-size: 2em;
+  font-weight: 300;
 }
 
 .menu {
@@ -107,8 +113,8 @@ h1 {
 }
 
 .menu-item:hover {
-  background: white;
-  color: #e91e63;
+  background: #191919;
+ 
 }
 .menu-item:nth-child(3) {
   transition-duration: 180ms;
