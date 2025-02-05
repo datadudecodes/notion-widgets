@@ -65,29 +65,44 @@
         </style>
     </head>
     <body>
-        <div class="polaroid">
-            <img id="nature-image" src alt="Nature Image of the Day">
-            <p id="image-caption"></p>
-        </div>
-        <button onclick="loadRandomImage()">New Image</button>
-        <script>
-        let images = [];
-        async function fetchCSV() {
-            const response = await fetch('/assets/data/images.csv');
-            const csvText = await response.text();
-            images = csvText.split('\n').slice(1).map(row => row.split(','));
-            loadRandomImage();
-        }
-        
-        function loadRandomImage() {
-            if (images.length === 0) return;
-            const randomIndex = Math.floor(Math.random() * images.length);
-            const [name, url] = images[randomIndex];
-            document.getElementById('nature-image').src = url.trim();
-            document.getElementById('image-caption').textContent = name.trim();
-        }
-        
-        fetchCSV();
+        <body>
+            <div class="polaroid">
+                <img id="nature-image" src alt="Nature Image of the Day">
+                <p id="image-caption"></p>
+            </div>
+            <button onclick="loadRandomImage()">New Image</button>
+            <script>
+            let images = [];
+            async function fetchCSV() {
+                try {
+                    const response = await fetch('/assets/data/images.csv');
+                    if (!response.ok) throw new Error('Failed to load CSV');
+                    
+                    const csvText = await response.text();
+                    images = csvText.split('\n')
+                        .map(row => row.split(','))
+                        .filter(row => row.length === 2 && row[0].trim() && row[1].trim()); // Ensure valid rows
+                    
+                    if (images.length === 0) throw new Error('No valid image data found');
+                    loadRandomImage();
+                } catch (error) {
+                    console.error(error);
+                    document.getElementById('image-caption').textContent = 'Error loading images';
+                }
+            }
+            
+            function loadRandomImage() {
+                if (images.length === 0) return;
+                const randomIndex = Math.floor(Math.random() * images.length);
+                const [name, url] = images[randomIndex];
+                
+                if (name && url) {
+                    document.getElementById('nature-image').src = url.trim();
+                    document.getElementById('image-caption').textContent = name.trim();
+                }
+            }
+            
+            fetchCSV();
         </script>
-    </body>
-</html>
+        </body>
+    </html>
