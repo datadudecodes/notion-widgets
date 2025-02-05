@@ -1,44 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Widget Gallery</title>
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Widget Gallery</title>
+        <link rel="stylesheet" href="assets/styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+            rel="stylesheet">
+    </head>
 
-<body>
-    <h1>My Widgets</h1>
+    <body>
+        <h1>My Widgets</h1>
 
-    <div class="gallery" id="gallery">
-        <div class="gallery-item">
-            <div class="content"><img
-                        src="https://i.ibb.co/8XBVGZ0/notion-button-widget-1.gif" alt=""></div>
-        </div>
-      
-        <div class="gallery-item">
-            <div class="content"><img src="https://i.ibb.co/2kRRF4y/Code-Pen-Pomodoro-Timer-1.gif" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://i.ibb.co/JHkhsJz/Retro-Pomodoro-1.gif" alt=""></div>
-        </div>
-        <div class="gallery-item">
-            <div class="content"><img src="https://i.ibb.co/JyYQw2Z/Quote-Widget-1.gif" alt=""></div>
-        </div>
+        <div class="gallery" id="gallery">
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://i.ibb.co/8XBVGZ0/notion-button-widget-1.gif"
+                        alt></div>
+            </div>
 
-    </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://i.ibb.co/2kRRF4y/Code-Pen-Pomodoro-Timer-1.gif"
+                        alt></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://i.ibb.co/JHkhsJz/Retro-Pomodoro-1.gif"
+                        alt></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://i.ibb.co/JyYQw2Z/Quote-Widget-1.gif"
+                        alt></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="https://i.imgur.com/9H4YGbV.jpeg"
+                        alt></div>
+            </div>
+
+        </div>
         <!-- Lightbox container -->
         <div id="lightbox" class="lightbox" style="display:none;">
             <span class="close" onclick="closeLightbox()">&times;</span>
-            <img class="lightbox-content" src="" alt="Expanded view">
+            <img class="lightbox-content" src alt="Expanded view">
             <div id="caption"></div>
         </div>
-    <script src="assets/scripts/main.js"></script>
-</body>
+        <script src="assets/scripts/main.js"></script>
+    </body>
 
 </html>
